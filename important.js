@@ -62,13 +62,12 @@ function reverse(str) {
   
   let result = str.split(' ');
   for (let i = 0; i < result.length; i++) {
-    if (i % 2 !== 0) {
-      console.log(result[i].split('').reverse().join(''));
-    } else {
-      console.log(result[i]);
+    if (i % 2 == 1) {
+      let char = result[i].split('').reverse().join('');
+      result[i] = char;
     }
   }
-  return result;
+  return result.join(' ');
 }
 
 console.log(reverse('one two three four'));

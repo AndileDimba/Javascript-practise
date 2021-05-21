@@ -97,7 +97,7 @@ function fizzbuzz(num) {
 }
 
 
-console.log(fizzbuzz(16));
+// console.log(fizzbuzz(16));
 
 //                           Replace word with another one
 
@@ -121,3 +121,34 @@ function replaceStr(str) {
 }
 
 // console.log(replaceStr('This film is the best movie in the world!'));
+
+
+//                  print out all the duplicates in an array
+
+function dupArr(arr) {
+  let newArr = arr.sort();
+  let results = [];
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] === newArr[i + 1]) {
+      results.push(newArr[i]);
+    }
+  }
+  return results;
+}
+
+// console.log(dupArr([1,2,3,4,5,6,7,8,9,8,4,3,2]));
+
+//                  print out only the first duplicate in an array
+
+function dupArr(arr) {
+  let newArr = arr.sort();
+  let results = [];
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] === newArr[i + 1]) {
+      results.push(newArr[i]);
+    }
+  }
+  return results[0];
+}
+
+// console.log(dupArr([1,2,3,4,5,6,7,8,9,8,4,3,2]));

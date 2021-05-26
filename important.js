@@ -93,9 +93,8 @@ function fizzbuzz(num) {
       result.push(i);
     }
   }
-  return result.join(' ');
+  return result.join(" ");
 }
-
 
 // console.log(fizzbuzz(16));
 
@@ -121,7 +120,6 @@ function replaceStr(str) {
 }
 
 // console.log(replaceStr('This film is the best movie in the world!'));
-
 
 //                  print out all the duplicates in an array
 
@@ -152,3 +150,32 @@ function dupArr(arr) {
 }
 
 // console.log(dupArr([1,2,3,4,5,6,7,8,9,8,4,3,2]));
+
+//                  print letters in an alphabetical order
+
+function alphabeticalOrder(arr) {
+  let result = arr.join(" ").toLowerCase().split(" ");
+  return result.sort(function (a, b) {
+    return a === b ? 0 : a > b ? 1 : -1;
+  });
+}
+console.log(
+  alphabeticalOrder([
+    "a",
+    "d",
+    "c",
+    "b",
+    "z",
+    "g",
+    "w",
+    "e",
+    "m",
+    "L",
+    "q",
+    "R",
+    "T",
+    "X",
+    "I",
+    "U",
+  ])
+);

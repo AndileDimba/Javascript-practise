@@ -146,7 +146,7 @@ function dupArr(arr) {
       results.push(newArr[i]);
     }
   }
-  return results[0];
+  return results;
 }
 
 // console.log(dupArr([1,2,3,4,5,6,7,8,9,8,4,3,2]));
@@ -159,23 +159,39 @@ function alphabeticalOrder(arr) {
     return a === b ? 0 : a > b ? 1 : -1;
   });
 }
-console.log(
-  alphabeticalOrder([
-    "a",
-    "d",
-    "c",
-    "b",
-    "z",
-    "g",
-    "w",
-    "e",
-    "m",
-    "L",
-    "q",
-    "R",
-    "T",
-    "X",
-    "I",
-    "U",
-  ])
-);
+// console.log(
+//   alphabeticalOrder([
+//     "a",
+//     "d",
+//     "c",
+//     "b",
+//     "z",
+//     "g",
+//     "w",
+//     "e",
+//     "m",
+//     "L",
+//     "q",
+//     "R",
+//     "T",
+//     "X",
+//     "I",
+//     "U",
+//   ])
+// );
+
+
+//                                 return all non duplicates
+
+function dupArr(arr1, arr2) {
+  var newArr = [];
+  newArr = arr1.concat(arr2);
+  function checkNum(num) {
+    if (arr1.indexOf(num) === -1 || arr2.indexOf(num) === -1) {
+      return num;
+    }
+  }
+  return newArr.filter(checkNum);
+}
+
+console.log(dupArr([1, 2, 3, 5], [1, 2, 3, 4, 5]));

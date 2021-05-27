@@ -31,3 +31,28 @@ function destroyer(arr) {
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+
+//                   Write an algorithm that will take an array for the first argument and 
+//                   return an array with all the objects that matches all the properties
+//                   and values in the Object passed as second parameter.
+
+
+function whatIsInAName(collection, source) {
+  let srcKeys = Object.keys(source);
+
+  // filter the collection
+  return collection.filter(function(obj) {
+    for (let i = 0; i < srcKeys.length; i++) {
+      if (
+        !obj.hasOwnProperty(srcKeys[i]) ||
+        obj[srcKeys[i]] !== source[srcKeys[i]]
+      ) {
+        return false;
+      }
+    }
+    return true;
+  });
+}
+
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));

@@ -228,4 +228,34 @@ function spinalCase(str) {
  return str.replace(regex, "-").toLowerCase();
 }
 
-console.log(spinalCase('This Is Spinal Tap'));
+// console.log(spinalCase('This Is Spinal Tap'));
+
+
+//     return a new array of unique values from two original arrays in the order they show up.
+//     So there is not sorting required, and there shouldn’t be any duplicates.
+
+
+function uniteUnique(arr1, arr2, arr3) {
+  // Creates an empty array to store our final result.
+  var finalArray = [];
+
+  // Loop through the arguments object to truly make the program work with two or more arrays
+  // instead of 3.
+  for (var i = 0; i < arguments.length; i++) {
+    var arrayArguments = arguments[i];
+
+    // Loops through the array at hand
+    for (var j = 0; j < arrayArguments.length; j++) {
+      var indexValue = arrayArguments[j];
+
+      // Checks if the value is already on the final array.
+      if (finalArray.indexOf(indexValue) < 0) {
+        finalArray.push(indexValue);
+      }
+    }
+  }
+
+  return finalArray;
+}
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));

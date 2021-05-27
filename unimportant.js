@@ -30,7 +30,7 @@ function destroyer(arr) {
   return arr.filter(item => item !== null);
 }
 
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+// console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 
 
 //                   Write an algorithm that will take an array for the first argument and 

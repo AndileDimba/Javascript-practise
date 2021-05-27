@@ -213,4 +213,19 @@ function destroyer(arr) {
   return arr.filter(item => item !== null);
 }
 
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+// console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+
+//               Convert the given string to a lowercase sentence with words joined by dashes
+
+function spinalCase(str) {
+  var regex = /\s+|_+/g;
+
+ // Replace low-upper case to low-space-uppercase
+ str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+
+ // Replace space and underscore with -
+ return str.replace(regex, "-").toLowerCase();
+}
+
+console.log(spinalCase('This Is Spinal Tap'));

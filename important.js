@@ -260,6 +260,8 @@ function uniteUnique(arr1, arr2, arr3) {
 
 // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
 
+//            instert dashes between odd numbers
+
 function stringChallenge(str) { 
   let arr = str.split('');
   let i = arr.length;

@@ -194,7 +194,7 @@ function dupArr(arr1, arr2) {
   return newArr.filter(checkNum);
 }
 
-console.log(dupArr([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+// console.log(dupArr([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
 
 //                                 remove duplicates from the array and other arguments
@@ -258,4 +258,17 @@ function uniteUnique(arr1, arr2, arr3) {
   return finalArray;
 }
 
-console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+// console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+function stringChallenge(str) { 
+  let arr = str.split('');
+  let i = arr.length;
+  while (i--) {
+    if (arr[i] % 2 && arr[i + 1] % 2) {
+      arr.splice(i + 1, 0, '-');
+    }
+  }
+  return arr.join(''); 
+}
+
+console.log(stringChallenge('99999'));

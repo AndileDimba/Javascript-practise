@@ -17,6 +17,7 @@ function isArith(arr) {
   if (new Set(newArr).size == 1) {
     return true;
   }
+  return false;
 }
 
 function isGeo(arr) {
@@ -29,7 +30,8 @@ function isGeo(arr) {
 
   if (new Set(newArr).size == 1) {
     return true;
-  }
+  } 
+  return false;
 }
 
 function ArithGeo(arr) {

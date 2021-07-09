@@ -1,70 +1,46 @@
-//                                 return all non duplicates
-
-function dupArr(arr1, arr2) {
-  var newArr = [];
-  newArr = arr1.concat(arr2);
-  function checkNum(num) {
-    if (arr1.indexOf(num) === -1 || arr2.indexOf(num) === -1) {
-      return num;
-    }
+// Have the function ArithGeo(arr) take the array of numbers stored in arr and return
+//  the string "Arithmetic" if the sequence follows an arithmetic pattern or return
+// "Geometric" if it follows a geometric pattern. If the sequence doesn't follow either
+//  pattern return -1. An arithmetic sequence is one where the difference between each of
+//  the numbers is consistent, where as in a geometric sequence, each term after the first
+//  is multiplied by some constant or common ratio
+//  Arithmetic example: [2, 4, 6, 8] and Geometric example: [2, 6, 18, 54]. Negative numbers
+//  may be entered as parameters, 0 will not be entered, and no array will contain all the same
+//  elements.
+function isArith(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    let difference = arr[i + 1] - arr[i];
+    newArr.push(difference);
   }
-  return newArr.filter(checkNum);
-}
 
-// console.log(dupArr([1, 2, 3, 5], [1, 2, 3, 4, 5]));
-
-
-//                                 remove duplicates from the array and other arguments
-
-
-function destroyer(arr) {
-  let valsToRemove = Object.values(arguments).slice(1);
-
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < valsToRemove.length; j++) {
-      if (arr[i] === valsToRemove[j]) {
-        delete arr[i];
-      }
-    }
-  }
-  return arr.filter(item => item !== null);
-}
-
-// console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
-
-
-//                   Write an algorithm that will take an array for the first argument and 
-//                   return an array with all the objects that matches all the properties
-//                   and values in the Object passed as second parameter.
-
-
-function whatIsInAName(collection, source) {
-  let srcKeys = Object.keys(source);
-
-  // filter the collection
-  return collection.filter(function(obj) {
-    for (let i = 0; i < srcKeys.length; i++) {
-      if (
-        !obj.hasOwnProperty(srcKeys[i]) ||
-        obj[srcKeys[i]] !== source[srcKeys[i]]
-      ) {
-        return false;
-      }
-    }
+  if (new Set(newArr).size == 1) {
     return true;
-  });
+  }
 }
 
-//               Convert the given string to a lowercase sentence with words joined by dashes
+function isGeo(arr) {
+  let newArr = [];
 
-function spinalCase(str) {
-  var regex = /\s+|_+/g;
+  for (let i = 0; i < arr.length - 1; i++) {
+    let difference = arr[i + 1] / arr[i];
+    newArr.push(difference);
+  }
 
- // Replace low-upper case to low-space-uppercase
- str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
-
- // Replace space and underscore with -
- return str.replace(regex, "-").toLowerCase();
+  if (new Set(newArr).size == 1) {
+    return true;
+  }
 }
 
-console.log(spinalCase('This Is Spinal Tap'));
+function ArithGeo(arr) {
+  if (isArith(arr)) {
+    return "arithmetic";
+  } else if (isGeo(arr)) {
+    return "geometric";
+  } else {
+    return -1;
+  }
+}
+console.log(ArithGeo([2, 4, 6, 8]));
+console.log(ArithGeo([2, 6, 18, 54]));
+console.log(ArithGeo([2, 6, 1, 54]));

@@ -1,48 +1,13 @@
-// Have the function ArithGeo(arr) take the array of numbers stored in arr and return
-//  the string "Arithmetic" if the sequence follows an arithmetic pattern or return
-// "Geometric" if it follows a geometric pattern. If the sequence doesn't follow either
-//  pattern return -1. An arithmetic sequence is one where the difference between each of
-//  the numbers is consistent, where as in a geometric sequence, each term after the first
-//  is multiplied by some constant or common ratio
-//  Arithmetic example: [2, 4, 6, 8] and Geometric example: [2, 6, 18, 54]. Negative numbers
-//  may be entered as parameters, 0 will not be entered, and no array will contain all the same
-//  elements.
-function isArith(arr) {
-  let newArr = [];
-  for (let i = 0; i < arr.length - 1; i++) {
-    let difference = arr[i + 1] - arr[i];
-    newArr.push(difference);
-  }
+//          Find a length of an array without using built-in functions 
 
-  if (new Set(newArr).size == 1) {
-    return true;
+function arrLength(arr) {
+  let result = 0;
+  for (let i = 0; i < 1000; i++) {
+    if (arr[i] !== undefined) {
+       result++
+    }
   }
-  return false;
+  return result;
 }
 
-function isGeo(arr) {
-  let newArr = [];
-
-  for (let i = 0; i < arr.length - 1; i++) {
-    let difference = arr[i + 1] / arr[i];
-    newArr.push(difference);
-  }
-
-  if (new Set(newArr).size == 1) {
-    return true;
-  } 
-  return false;
-}
-
-function ArithGeo(arr) {
-  if (isArith(arr)) {
-    return "arithmetic";
-  } else if (isGeo(arr)) {
-    return "geometric";
-  } else {
-    return -1;
-  }
-}
-console.log(ArithGeo([2, 4, 6, 8]));
-console.log(ArithGeo([2, 6, 18, 54]));
-console.log(ArithGeo([2, 6, 1, 54]));
+console.log(arrLength([1,2,3,4,5,6,7,8,9,10]));

@@ -180,7 +180,6 @@ function alphabeticalOrder(arr) {
 //   ])
 // );
 
-
 //                                 return all non duplicates
 
 function dupArr(arr1, arr2) {
@@ -196,9 +195,7 @@ function dupArr(arr1, arr2) {
 
 // console.log(dupArr([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
-
 //                                 remove duplicates from the array and other arguments
-
 
 function destroyer(arr) {
   let valsToRemove = Object.values(arguments).slice(1);
@@ -210,30 +207,27 @@ function destroyer(arr) {
       }
     }
   }
-  return arr.filter(item => item !== null);
+  return arr.filter((item) => item !== null);
 }
 
 // console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
-
 
 //               Convert the given string to a lowercase sentence with words joined by dashes
 
 function spinalCase(str) {
   var regex = /\s+|_+/g;
 
- // Replace low-upper case to low-space-uppercase
- str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  // Replace low-upper case to low-space-uppercase
+  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
 
- // Replace space and underscore with -
- return str.replace(regex, "-").toLowerCase();
+  // Replace space and underscore with -
+  return str.replace(regex, "-").toLowerCase();
 }
 
 // console.log(spinalCase('This Is Spinal Tap'));
 
-
 //     return a new array of unique values from two original arrays in the order they show up.
 //     So there is not sorting required, and there shouldn’t be any duplicates.
-
 
 function uniteUnique(arr1, arr2, arr3) {
   // Creates an empty array to store our final result.
@@ -262,19 +256,18 @@ function uniteUnique(arr1, arr2, arr3) {
 
 //            instert dashes between odd numbers
 
-function stringChallenge(str) { 
-  let arr = str.split('');
+function stringChallenge(str) {
+  let arr = str.split("");
   let i = arr.length;
   while (i--) {
     if (arr[i] % 2 && arr[i + 1] % 2) {
-      arr.splice(i + 1, 0, '-');
+      arr.splice(i + 1, 0, "-");
     }
   }
-  return arr.join(''); 
+  return arr.join("");
 }
 
 // console.log(stringChallenge('99999'));
-
 
 // Have the function ArithGeo(arr) take the array of numbers stored in arr and return
 //  the string "Arithmetic" if the sequence follows an arithmetic pattern or return
@@ -285,7 +278,6 @@ function stringChallenge(str) {
 //  Arithmetic example: [2, 4, 6, 8] and Geometric example: [2, 6, 18, 54]. Negative numbers
 //  may be entered as parameters, 0 will not be entered, and no array will contain all the same
 //  elements.
-
 
 function isArith(arr) {
   let newArr = [];
@@ -310,7 +302,7 @@ function isGeo(arr) {
 
   if (new Set(newArr).size == 1) {
     return true;
-  } 
+  }
   return false;
 }
 
@@ -323,18 +315,20 @@ function ArithGeo(arr) {
     return -1;
   }
 }
-console.log(ArithGeo([2, 4, 6, 8]));
-console.log(ArithGeo([2, 6, 18, 54]));
-console.log(ArithGeo([2, 6, 1, 54]));
+// console.log(ArithGeo([2, 4, 6, 8]));
+// console.log(ArithGeo([2, 6, 18, 54]));
+// console.log(ArithGeo([2, 6, 1, 54]));
 
+//          Find a length of an array without using built-in functions 
 
+function arrLength(arr) {
+  let result = 0;
+  for (let i = 0; i < 1000; i++) {
+    if (arr[i] !== undefined) {
+       result++
+    }
+  }
+  return result;
+}
 
-
-
-
-
-
-
-
-
-
+// console.log(arrLength([1,2,3,4,5,6,7,8,9,10]));

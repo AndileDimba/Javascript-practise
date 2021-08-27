@@ -1,31 +1,42 @@
 "use strict";
 const nodemailer = require("nodemailer");
+const allQuotes = require("../src/quote.json");
+require('dotenv').config()
 
-
+// /**
+//  * sendEmail
 //  * @param {Object} mailObj - Email meta data and body
 //  * @param {String} from - Email address of the sender
 //  * @param {Array} recipients - Array of recipients email address
 //  * @param {String} subject - Subject of the email
-//  * @param {String} message
+//  * @param {String} message - message
+//  */
+
+ function randomizer() {
+  let random = Math.floor(Math.random() * 39) + 1;
+  return `"${allQuotes[random].text}" - ${allQuotes[random].from}`;
+}
 
 const sendEmail = async (mailObj) => {
   const { from, recipients, subject, message } = mailObj;
 
   try {
+    // Create a transporter
     let transporter = nodemailer.createTransport({
-      host: "smtp-relay.sendinblue.com",
-      port: 587,
+      host: process.env.SMTP_SERVER,
+      port: process.env.SMTP_PORT,
       auth: {
-        user: "andile.dimba@umuzi.org",
-        pass: "rS3N5qFGHOCAygdI",
+        user: process.env.SMTP_LOGIN,
+        pass: process.env.SMTP_PASSWORD,
       },
     });
 
+    // send mail with defined transport object
     let mailStatus = await transporter.sendMail({
-      from: from,
-      to: recipients,
-      subject: subject,
-      text: message,
+      from: from, // sender address
+      to: recipients, // list of recipients
+      subject: subject, // Subject line
+      text: message, // plain text
     });
 
     console.log(`Message sent: ${mailStatus.messageId}`);
@@ -37,13 +48,12 @@ const sendEmail = async (mailObj) => {
     );
   }
 };
-
+// refilwe.mashile@umuzi.org
 const mailObj = {
   from: "andile.dimba@umuzi.org",
-  recipients: ["mlamulia75@gmail.com"],
+  recipients: ["refilwe.mashile@umuzi.org"],
   subject: "Sending email by nodejs",
-  message:
-    "Hey Mlamuli, I am sending this email to you by nodejs using sendinblue on the R=email random inspirational quote project",
+  message: randomizer(),
 };
 
 sendEmail(mailObj).then((res) => {

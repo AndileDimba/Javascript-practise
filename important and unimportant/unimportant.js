@@ -36,22 +36,22 @@
 // console.log(`x = ${x}`);
 
 4
-// function  foo(){
-//   for(let i = 100; i < 104; i++){
-//     let num = 0;
-//     num += 1;
-//     console.log(i);
-//     console.log("Hi");
-//     if(num == 3){
-//       return i + 1;
-//     }
-//   }
-//   console.log("Blue");
-//   console.log("Green");
-// }
-// x = foo();
-// x = foo();
-// console.log(`x = ${x}`);
+function  foo(){
+  let num = 0;
+  for(let i = 100; i < 104; i++){
+    num += 1;
+    console.log(i);
+    console.log("Hi");
+    if(num == 3){
+      return i + 1;
+    }
+  }
+  console.log("Blue");
+  console.log("Green");
+}
+x = foo();
+x = foo();
+console.log(`x = ${x}`);
 
 5
 // function    foo(color){
@@ -109,14 +109,26 @@
 
 
 // function  foo(){
-  for(let i = 0; i < 3; i++){
-  for(let j = i; j < 4; j++) {
-    console.log(j)
-  }
-  }
+  // for(let i = 0; i < 3; i++){
+  // for(let j = 0; j < 4; j++) {
+  //   console.log(j)
+  //   console.log(j)
+  //   return j
+  // }
+  // }
 //     return i++;
 //   }
 //   console.log("Hi");
 // }
 // x = foo();
 // console.log(`x = ${x}`);
+
+
+
+// 100
+// hi
+// 101
+// hi
+// 102
+// hi
+// x = 103

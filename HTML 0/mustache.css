@@ -1,0 +1,58 @@
+/*.mustache {
+    width: 180px;
+    height: 180px;
+    left: 100px;
+    border-radius: 50%;
+    position: absolute;
+    color: black;
+    box-shadow:
+      150px 240px 0 0 currentColor,
+      3000px 240px 0 0 currentColor,
+}
+.mustache::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    width: 210px;
+    height: 120px;
+    border-bottom: solid 180px currentColor;
+    border-radius: 0 0 0 100%;
+        transform: rotate(-40deg);
+    transform-origin: right 210px;
+}
+.mustache::after {
+    content: "";
+    position: absolute;
+    left: 390px;
+    top: 120px;
+    width: 210px;
+    height: 120px;
+    border-bottom: solid 180px currentColor;
+    border-radius: 0 0 100% 0;
+    transform: rotate(40deg);
+    transform-origin: left 210px;
+} */
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-image: initial;
+}

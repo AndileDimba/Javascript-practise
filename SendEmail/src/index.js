@@ -1,7 +1,7 @@
 "use strict";
 const nodemailer = require("nodemailer");
 const allQuotes = require("../src/quote.json");
-require('dotenv').config()
+require('dotenv').config();
 
 // /**
 //  * sendEmail
@@ -21,7 +21,6 @@ const sendEmail = async (mailObj) => {
   const { from, recipients, subject, message } = mailObj;
 
   try {
-    // Create a transporter
     let transporter = nodemailer.createTransport({
       host: process.env.SMTP_SERVER,
       port: process.env.SMTP_PORT,
@@ -31,12 +30,11 @@ const sendEmail = async (mailObj) => {
       },
     });
 
-    // send mail with defined transport object
     let mailStatus = await transporter.sendMail({
-      from: from, // sender address
-      to: recipients, // list of recipients
-      subject: subject, // Subject line
-      text: message, // plain text
+      from: from,
+      to: recipients,
+      subject: subject,
+      text: message,
     });
 
     console.log(`Message sent: ${mailStatus.messageId}`);
@@ -48,10 +46,10 @@ const sendEmail = async (mailObj) => {
     );
   }
 };
-// refilwe.mashile@umuzi.org
+
 const mailObj = {
   from: "andile.dimba@umuzi.org",
-  recipients: ["refilwe.mashile@umuzi.org"],
+  recipients: ["mlamulia75@gmail.com"],
   subject: "Sending email by nodejs",
   message: randomizer(),
 };

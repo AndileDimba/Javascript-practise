@@ -132,3 +132,15 @@ console.log(`x = ${x}`);
 // 102
 // hi
 // x = 103
+
+
+beforeEach(() => {
+    randomNotesBtn.addEventListener("click", () => {
+      buddy.selectNotes();
+      notesText.innerHTML = `[${buddy.randomNotes}]`;
+    });
+
+    event = document.createEvent("CustomEvent");
+    event.initEvent("click", true, true);
+    randomNotesBtn.dispatchEvent(event);
+  });

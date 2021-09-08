@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mustache</title>
+	<style type="text/css">
+		#mustache {
+			color: black;
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+			box-shadow: 150px 100px 0 0 currentcolor, 280px 100px 0 0 currentcolor;
+			position: absolute;
+		}
+		#mustache:before {
+			content: '';
+			width: 100%;
+			height: 100px;
+			display: block;
+			border-bottom: 150px solid currentcolor;
+			border-radius: 0 0 0 100%;
+			position: absolute;
+			top: 0;
+			left: 75px;
+		}
+		#mustache:after {
+			content: '';
+			width: 100%;
+			height: 100px;
+			display: block;
+			border-bottom: 150px solid currentcolor;
+			border-radius: 0 0 100% 0;
+			position: absolute;
+			top: 0;
+			left: 355px;
+		}
+	</style>
+</head>
+<body>
+<div id="mustache"></div>
+</body>
+</html>

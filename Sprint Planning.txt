@@ -190,3 +190,9 @@
 1. Semitone Difference Basic Algorithm                              [Complete]
 2. Memory Game Web App                                              [Progress]
 3. Email Random Inspirational Quote                                 [Review]
+
+                     08 September 2021
+
+1. Semitone Difference Basic Algorithm                              [Complete]
+2. Memory Game Web App                                              [PR]         DONE
+3. Email Random Inspirational Quote                                 [Review]     DONE
